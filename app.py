@@ -24,5 +24,6 @@ app = create_app()
 socketio.init_app(app, cors_allowed_origins="*")
 
 if __name__ == "__main__":
-    print("🚀 Flask-SocketIO running at ws://localhost:5000/socket.io/")
-    socketio.run(app, host="0.0.0.0", port=5000, debug=True)
+    # print("🚀 Flask-SocketIO running at ws://localhost:5000/socket.io/")
+    socketio.run(app, host="0.0.0.0", port=17068, debug=True)
+
