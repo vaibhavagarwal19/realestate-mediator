@@ -6,3 +6,4 @@ redis
 requests
 pymysql
 eventlet
+python-dotenv
