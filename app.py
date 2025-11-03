@@ -4,6 +4,7 @@ from flask_migrate import Migrate
 from database import db
 from config import Config
 from routes.chat_routes import chat_bp
+from routes.intents_routes import intents_bp
 from routes.socket_manager import socketio
 
 # Import models for migrations
@@ -16,6 +17,8 @@ def create_app():
     db.init_app(app)
     Migrate(app, db)
     app.register_blueprint(chat_bp)
+    app.register_blueprint(intents_bp, url_prefix="/api")
+
     return app
 
 app = create_app()
