@@ -2,6 +2,8 @@ from flask import Flask
 from flask_cors import CORS
 from flask_migrate import Migrate
 from database import db
+from dotenv import load_dotenv
+load_dotenv()
 from config import Config
 from routes.chat_routes import chat_bp
 from routes.intents_routes import intents_bp

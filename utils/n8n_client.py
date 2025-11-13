@@ -25,6 +25,7 @@ def send_to_n8n(user_id, query, context=None):
     try:
         res = requests.post(Config.N8N_AGENT_URL, json=payload, timeout=60)
         # Raise an error if the response is not JSON
+        print(res)
         res.raise_for_status()
         return res.json()
     except requests.exceptions.RequestException as e:

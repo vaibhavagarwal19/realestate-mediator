@@ -3,9 +3,9 @@ from flask import Blueprint, jsonify
 intents_bp = Blueprint("intents", __name__)
 
 SAMPLE_INTENTS = [
-    "Search for a Property",
-    "Show RE developers",
-    "Show home Service",
+    "Show properties",
+    "Show stores",
+    "Show blogs",
 ]
 
 def get_common_intents():
