@@ -3,6 +3,7 @@ from database import db
 from database.models import UserMessage
 from redis_client.session_manager import add_message_to_context, get_context
 from utils.n8n_client import send_to_n8n
+import json
 
 chat_bp = Blueprint("chat", __name__)
 
@@ -26,8 +27,8 @@ def chat():
     # Send to n8n
     result = send_to_n8n(user_id, query, context)
 
-    # Store bot reply
-    msg.ai_response = str(result)
+    # Store bot reply as VALID JSON (with double quotes)
+    msg.ai_response = json.dumps(result, ensure_ascii=False)
     db.session.commit()
 
     # Update Redis context

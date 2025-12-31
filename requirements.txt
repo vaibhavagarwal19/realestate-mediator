@@ -7,3 +7,4 @@ requests
 pymysql
 eventlet
 python-dotenv
+flask_migrate
